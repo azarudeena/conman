@@ -1,0 +1,10 @@
+sudo cat <<EOF > /var/www/html/info.php
+  <?php
+  phpinfo();
+?>
+EOF
+sudo cat <<EOF > /var/www/html/info.php
+  <?php
+  phpinfo();
+?>
+EOF

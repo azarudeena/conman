@@ -1,0 +1,11 @@
+hosts:
+  name : 34.228.38.208,100.26.22.98
+  user: root
+  files:
+    content:
+      - name: info.php
+        path: /var/www/html
+        text: |
+          <?php
+            phpinfo();
+          ?>

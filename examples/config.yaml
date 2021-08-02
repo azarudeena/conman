@@ -1,0 +1,43 @@
+hosts:
+  name : 34.228.38.208,100.26.22.98
+  user: root
+  package:
+    install:
+      - name: apache2
+      - name: php
+      - name: libapache2-mod-php
+  service:
+    restart:apache2
+  files:
+    config:
+    - name: azar
+      path: /home/ubuntu
+      owner: ubuntu
+      group: ubuntu
+      mode: 0777
+      service:
+        restart:apache2
+    - name: testfile2
+      path: /home/ubuntu
+      owner: ubuntu
+      group: ubuntu
+      mode: 0700
+    content:
+    - name: index.php
+      path: /var/www/html
+      text: |
+        <?php
+           echo "Hello World";
+        ?>
+    - name: info.php
+      path: /var/www/html
+      text: |
+        <?php
+          phpinfo();
+        ?>
+    - name: dir.conf
+      path: /etc/apache2/mods-enabled/
+      text: |
+        <IfModule mod_dir.c>
+           DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
+        </IfModule>
