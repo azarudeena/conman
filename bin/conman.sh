@@ -22,11 +22,11 @@ usage () {
       -s state:service to be maintained service to be the name of the service. state: desired state; Valid values: start, stop, restart, enable, disable Ex: start:apache2,disable:sshd,stop:redis
 
       Usage :
-        tool -u <username> -h <hostips> -f <path to scriptfile>";
-        Ex: tool -u alice -h x.x.x.x -f /here/this-file.sh -c 'pwd;ls;'
+        ./conman.sh -u <username> -h <hostips> -f <path to scriptfile>";
+        Ex: ./conman.sh -u alice -h x.x.x.x -f /here/this-file.sh -c 'pwd;ls;'
 
       For multiple hosts
-        tool -u alice -h x.x.x.x -h x.x.x.x -f /here/this-file.sh
+        ./conman.sh -u alice -h x.x.x.x -h x.x.x.x -f /here/this-file.sh
 EOF
     abort ""
   }

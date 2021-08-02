@@ -39,11 +39,13 @@ and pass it on in the script or Use the Options to utilise for one time usage an
       -I packages to install Ex: vim,apache2
       -R packages to remove Ex: vim,nano
       -s state:service to be maintained service to be the name of the service. state: desired state; Valid values: start, stop, restart, enable, disable Ex: start:apache2
+      
+      Usage 
         ./conman.sh -y <yaml config path>
         Ex: ./conman.sh -y ./config.yaml 
         
         ./conman.sh -u <username> -h <hostips> -f <path to scriptfile>";
-        Ex: tool -u alice -h x.x.x.x -f /here/this-file.sh -c 'pwd;ls;'
+        Ex: ./conman.sh -u alice -h x.x.x.x -f /here/this-file.sh -c 'pwd;ls;'
 
         For multiple hosts in CLI 
         ./conman.sh -u alice -h x.x.x.x -h x.x.x.x -f /here/this-file.sh
