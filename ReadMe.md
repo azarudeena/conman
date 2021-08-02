@@ -1,4 +1,4 @@
-## ConMan Script
+# ConMan (Configuration Management) Script
     
 This is simple Configuration Management script enough to configure the debian machines with SSH protocol enabled with configurations with respect 
 to packages installation/removal, service state and file ownership, metadata or content management with a YAML based 
@@ -6,7 +6,11 @@ configuration or CLI mode.
 
 it uses [yq](https://mikefarah.gitbook.io/yq/#install) tool not the `python-yq` as it's dependency to parse through the YAML config files. 
 
-### Considerations for config file: 
+## Architechture
+
+Simple script file which creates a scripts to be executed for the configurataions of the remote system parsed from yaml or CLI options and then executed in the SSH channel opened for the hosts. 
+
+## Considerations for config file: 
 
 * `.json `- JavaScript Object Notation or JSON is an open-standard file format that uses readable text to transmit data 
 objects consisting of attribute–value pairs and array data types 
@@ -18,15 +22,19 @@ hosts in most human friendly format with key:value and array  with clean definit
 experience with `.yaml` configs, I have decided to use it for best interest of time even after spending some time  on `.json`.
 Also, `yaml` can be configured to multiple docs with seperator `---` which can extended for future versions. 
 
-### Consuming Pattern:
+## Consuming Pattern:
 
 The configuration presented in the `yaml` files can be done with command line options as well. Configure the `yml` config
 and pass it on in the script or Use the Options to utilise for one time usage any script. 
 
 
-### Docs 
+## Docs 
 
-#### Usage
+### installation
+
+Clone this [repo](https://github.com/azarudeena/conman) and execute the `Bootstrap.sh` in bin folder script and add the `conman.sh` to PATH (with alias if preferred). or just use it as it is. 
+
+### Usage
 
 ``` markdown
     Options:
@@ -51,7 +59,7 @@ and pass it on in the script or Use the Options to utilise for one time usage an
         ./conman.sh -u alice -h x.x.x.x -h x.x.x.x -f /here/this-file.sh
 ```
 
-#### Config file Example 
+### Config file Example 
 
 ```yaml
 hosts: 
@@ -102,7 +110,7 @@ hosts:
         </IfModule>
 ```
 
-#### Syntax 
+### Syntax 
 
 The config file needs to be [yaml](http://www.yaml.org/) file.
 
@@ -115,11 +123,11 @@ The config file needs to be [yaml](http://www.yaml.org/) file.
 
 The `config` as well as `content` array elements can mark a service to set to specific state after the modification. Please refer example. 
 
-#### logging
+### logging
 
 Logs for this tool is configurable the script. just replace `log.out` at the start of the script file to specific file to append the logs. Defaults to log.out in the same location as script.  
 
-#### Improvements can be made
+### Improvements can be made
 
 1. validation of yaml configuration for valid values. 
 2. in the files config section, validation of user or group availble in the remote system to softly fail the progress. 
