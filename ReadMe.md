@@ -6,7 +6,7 @@ configuration or CLI mode.
 
 it uses [yq](https://mikefarah.gitbook.io/yq/#install) tool not the `python-yq` as it's dependency to parse through the YAML config files. 
 
-## Architechture
+## Architecture
 
 Simple script file which creates a scripts to be executed for the configurataions of the remote system parsed from yaml or CLI options and then executed in the SSH channel opened for the hosts. 
 
