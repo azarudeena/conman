@@ -136,3 +136,6 @@ Logs for this tool is configurable the script. just replace `log.out` at the sta
 5. Parsing of multi doc yaml configuration.
 6. make the script file to platform based binary with [shc compiler](https://github.com/neurobin/shc)
 7. and the list goes on... forever
+
+
+Credits:   <strong> Inspired by [aws2tf](https://github.com/aws-samples/aws2tf) </strong>
